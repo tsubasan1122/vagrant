@@ -1,0 +1,38 @@
+<div class="body">
+  <div class="container">
+    <p id="notice"></p>
+    
+
+	<h2>User info</h2>
+	<%= form_for(@user_image) do |f| %>
+
+		<% if @user_image.errors.any? %>
+  	<div id="error_explanation">
+    	<h2><%= @user_image.errors.count %>errors prohibited this book from being saved:</h2>
+    	<ul>
+    	<% @user_image.errors.full_messages.each do |message| %>
+      	<li><%= message %></li>
+    	<% end %>
+    	</ul>
+ 	 </div>
+	<% end %>
+		
+		<div class="field">
+			<label for="user_name">Name</label>
+			<%= f.text_field :username,autofocus: true, class:"name" %>
+		</div>
+		<div class="field">
+			<label for="user_image">Image</label>
+			<%= f.attachment_field :image, class:"user_image" %>
+		</div>
+		<div class="field">
+			<label for="user_introduction">Introduction</label>
+			<%= f.text_field :introduction, class:"introduction" %>
+		</div>
+		<div class="actions">
+			<%= f.submit "Update User" %>
+		</div>
+
+	<% end %>
+	</div>
+</div>
