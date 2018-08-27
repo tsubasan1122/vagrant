@@ -46,7 +46,7 @@ before_action :authenticate_user!
     def destroy
       book = Book.find(params[:id])
       book.destroy
-      redirect_to root_path ,notice:"successfully"
+      redirect_to user_path(current_user) ,notice:"successfully"
     end
 
     private
