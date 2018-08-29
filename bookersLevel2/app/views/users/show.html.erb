@@ -25,7 +25,7 @@
 						      <tbody>
 						        <% @posts.each do |post| %>
 						          <tr>
-						            <td><%= link_to attachment_image_tag(@user, :image, :fill, 50, 50, format: 'jpeg', class: "attachment user profile_image fallback", fallback: "no_image.jpg"), user_path(post.id) %></td>
+						            <td><%= attachment_image_tag(@user, :image, :fill, 50, 50, format: 'jpeg', class: "attachment user profile_image fallback ", fallback: "no_image.jpg") %></td>
 						            <td><%= link_to post.title, book_path(post.id), class: "book_#{post.id}" %></td>
 						            <td><%= post.opinion %></td>
 						          </tr>

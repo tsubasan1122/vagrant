@@ -28,7 +28,7 @@
 	            <td>
 	            	<%= link_to attachment_image_tag(book.user, :image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg"), user_path(book.user.id) %>
 	            </td>
-	            <td><%= link_to book.title, book_path(book), class: "book_#{book.user.id}" %></td>
+	            <td><%= link_to book.title, book_path(book), class: "book_#{book.id}" %></td>
 	            <td><%= book.opinion %></td>
 	        </tr>
 	      <% end %>
